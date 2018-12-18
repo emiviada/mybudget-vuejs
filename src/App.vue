@@ -1,9 +1,21 @@
 <template>
   <div id="app">
-    <router-view/>
+    <component :is="layout" />
   </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+  name: 'app',
+  computed: {
+    layout () {
+      const isAuth = false
+      const layout = isAuth ? 'Layout' : 'AuthLayout'
+      return () => import(`@/components/common/${layout}`)
+    }
+  }
+}
+</script>
 
+<style lang="scss">
 </style>
