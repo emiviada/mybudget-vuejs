@@ -6,6 +6,9 @@ body {
   overflow-x: hidden;
 }
 footer { padding: 20px 0 10px; }
+@include media-breakpoint-up(lg) {
+  footer.container { max-width: 800px; }
+}
 h2, .h2 { font-size: 26px; }
 a {
   color: $success;
@@ -21,10 +24,10 @@ a {
 /*** Auth Layout ***/
 .auth-layout {
   padding: 20px;
-  @media (min-width: 768px) {
+  @include media-breakpoint-up(md) {
     padding-top: 100px;
   }
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     max-width: 800px;
     margin: 0 auto;
   }

@@ -6,7 +6,10 @@
     <div class="form-group">
       <password-field />
     </div>
-    <button type="submit" class="btn btn-success btn-sm w-100">Login</button>
+    <div class="form-group">
+      <input type="password" class="form-control form-control-sm" id="confirm-password" placeholder="Confirmar Contraseña">
+    </div>
+    <button type="submit" class="btn btn-success btn-sm w-100">Registrarse</button>
   </form>
 </template>
 
@@ -15,7 +18,7 @@ import EmailField from '@/components/forms/EmailField'
 import PasswordField from '@/components/forms/PasswordField'
 
 export default {
-  name: 'LoginForm',
+  name: 'RegisterForm',
   components: { EmailField, PasswordField }
 }
 </script>
