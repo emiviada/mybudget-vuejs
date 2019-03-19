@@ -1,11 +1,11 @@
 function initialState () {
   return {
     // token: localStorage.getItem(USER_TOKEN_NAME) || '',
-    token: ''
+    token: '',
     // sign_in_user: {},
     // loggedInUser: JSON.parse(localStorage.getItem(USER_KEY_NAME)) || { initials: [] },
     // myAccountData: {},
-    // accounts: []
+    users: []
   }
 }
 
