@@ -12,10 +12,11 @@ export const ErrorsDictionary = {
             min: () => 'Al menos 6 caracteres.'// ,
             // max: () => 'Invalid password.',
             // regex: () => 'Invalid password.'
-          }/* ,
+          },
           confirmPassword: {
-            confirmed: () => 'Those passwords don\'t match.'
-          } */
+            required: () => 'La confirmación de contraseña es requerida.',
+            confirmed: () => 'Las contraseñas no concuerdan.'
+          }
         }
       }
     }

@@ -5,6 +5,7 @@
     </div>
     <div class="form-group">
       <password-field v-on:onBlurPassword="onBlurPassword" />
+      <span v-show="generalError" class="error">{{ generalError }}</span>
     </div>
     <button type="submit" :disabled="errors.any() || submitting" class="btn btn-success btn-sm w-100">Login</button>
   </form>
@@ -23,15 +24,18 @@ export default {
     return {
       email: '',
       password: '',
-      submitting: false
+      submitting: false,
+      generalError: ''
     }
   },
   methods: {
     onBlurEmail (email) {
       this.email = email
+      this.generalError = ''
     },
     onBlurPassword (password) {
       this.password = password
+      this.generalError = ''
     },
     onSignIn () {
       this.$validator.validateAll().then((valid) => {
@@ -42,7 +46,7 @@ export default {
           this.$store.dispatch('SIGN_IN', { email, password })
             .then(response => {
               if (response && response.status !== 200) {
-                this.$validator.errors.add('password', response.data.error)
+                this.generalError = response.data.error
               } else {
                 this.$router.push({ name: 'Dashboard' })
               }
